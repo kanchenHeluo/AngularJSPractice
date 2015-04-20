@@ -1,0 +1,52 @@
+<html ng-app="testApp">
+<head>
+	<meta charset="utf-8">
+	<title>Test Site</title>
+	
+	<script src="js/jquery-2.1.3.js" ></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.js" ></script>
+	<script src="js/angular-cookies.js" ></script>
+
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controller/testCtrl.js"></script>	
+	<script src="js/app/controller/viewCtrl.js"></script>	
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body >
+	<div ng-controller="testCtrl as book">
+		<h1>Book List</h1>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Author</th>
+				<th>Details</th>
+				<th>Favorite</th>
+			</tr>
+			<tr ng-repeat = 'item in book.books'>
+				<td>{{item.id}}</td>
+				<td>{{item.title}}</td>
+				<td>{{item.author}}</td>
+				<td><a href='#' ng-click='book.setCurrentBook(item)'>View Detail</a></td>
+				<td><a href="#" ng-click='book.setAsFavorite(item)'>Set As Favorite</a></td>
+			</tr>
+		</table>
+	</div>
+
+	<div ng-controller="viewCtrl as viewBook"> 
+		<h1>Current Book</h1>
+		<input type='button' value='test' ng-click='viewBook.test()'>
+		<table>
+			<tr>
+				<td>{{viewBook.currentBook}}</td>
+			</tr>
+		</table>
+
+		<h1>Favorite Book</h1>
+		<span>{{viewBook.favoriteBook}}</span>
+	</div>
+
+</body>
+</html>
