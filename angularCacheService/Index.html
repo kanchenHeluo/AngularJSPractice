@@ -1,0 +1,53 @@
+<html ng-app="testApp">
+<head>
+	<meta charset="utf-8">
+	<title>Test Site</title>
+	
+	<script src="js/jquery-2.1.3.js" ></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/angular.js" ></script>
+	
+
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controller/testCtrl.js"></script>	
+	<script src="js/app/service/bookSvc.js"></script>	
+
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+</head>
+<body ng-controller="testCtrl as book">
+	<div ng-init="book.getBooks()">
+		<h1>Book List</h1>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Author</th>
+			</tr>
+			<tr ng-repeat = 'item in book.books'>
+				<td>{{item.id}}</td>
+				<td>{{item.title}}</td>
+				<td>{{item.author}}</td>				
+			</tr>
+		</table>
+	</div>
+
+	<h1>Confirm</h1>
+	<input type="button" ng-click="book.getAgainBooks()" value="test" />
+	<div>
+		<h1>Book List</h1>
+		<table>
+			<tr>
+				<th>Id</th>
+				<th>Title</th>
+				<th>Author</th>
+			</tr>
+			<tr ng-repeat = 'item in book.againBooks'>
+				<td>{{item.id}}</td>
+				<td>{{item.title}}</td>
+				<td>{{item.author}}</td>				
+			</tr>
+		</table>
+	</div>
+
+</body>
+</html>
