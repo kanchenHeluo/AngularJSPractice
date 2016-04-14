@@ -1,1 +1,0 @@
-﻿var commonApp = angular.module('commonApp', ['ui.bootstrap']);
