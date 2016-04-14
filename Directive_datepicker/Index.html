@@ -1,0 +1,22 @@
+<html ng-app="testApp">
+<head>
+	<meta charset="utf-8">
+	<title>Test Site</title>
+	
+	<script src="js/angular.js" ></script>
+	<script src="js/ui-bootstrap-tpls-0.12.0.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="http://apps.bdimg.com/libs/bootstrap-glyphicons/1.0/css/bootstrap-glyphicons.css" />
+
+	<script src="js/app/app.js"></script>
+	<script src="js/app/controller/testCtrl.js"></script>
+	<script src="js/app/directive/ck-datepicker.js"></script>	
+</head>
+<body ng-controller="testCtrl">
+	<label>Test Datepicker:</label>
+	<ck-datepicker ng-model="birthday" min-date="minDate"></ck-datepicker>
+	<hr />
+	<label>Input Date Is:</label>
+	<p>{{birthday}}</p>
+</body>
+</html>
